@@ -1,4 +1,3 @@
-// favs.js
 class DogApp {
     constructor() {
         this.apiKey = 'live_6itwyq9pwHqb3DGhEa5mQPoPm5w18i8W4tg2MOjMtzDsiqmsDMzwbmkrMz9Z6tTk';
@@ -13,10 +12,10 @@ class DogApp {
         });
         const data = await res.json();
 
-        // Limpar container antes de adicionar novas imagens
+        // Limpar o container antes de adicionar novas imagens.
         this.favContainer.innerHTML = '';
 
-        // Adicionar as imagens favoritas na grade
+        // Adicionar as imagens favoritas na grade com 03 colunas.
         data.forEach(fav => {
             const imgElement = document.createElement('img');
             imgElement.src = fav.image.url;

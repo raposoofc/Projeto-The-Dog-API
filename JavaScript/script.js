@@ -82,10 +82,10 @@ class DogApp {
         });
         const data = await res.json();
         
-        // Limpar container antes de adicionar novas imagens
+        // Limpar o container antes de adicionar novas imagens.
         this.favContainer.innerHTML = '';
 
-        // Criar a tabela
+        // Criar a tabela com 03 colunas.
         const table = document.createElement('table');
         const headerRow = document.createElement('tr');
         const header1 = document.createElement('th');
@@ -96,7 +96,7 @@ class DogApp {
         headerRow.appendChild(header2);
         table.appendChild(headerRow);
 
-        // Adicionar as imagens favoritas na tabela
+        // Adicionar as imagens favoritadas na tabela.
         data.forEach(fav => {
             const row = document.createElement('tr');
 
@@ -117,7 +117,7 @@ class DogApp {
             table.appendChild(row);
         });
 
-        // Adicionar a tabela ao container de favoritos
+        // Adicionar a tabela ao container de favoritos.
         this.favContainer.appendChild(table);
     }
 
@@ -126,7 +126,7 @@ class DogApp {
             method: 'DELETE',
             headers: { 'x-api-key': this.apiKey }
         });
-        this.showFavorites();  // Atualizar a lista de favoritos
+        this.showFavorites();  // Atualizar a lista de favoritos a cada nova ação de favoritar na tela inicial.
     }
 
     async loadBreeds() {
